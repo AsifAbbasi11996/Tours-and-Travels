@@ -14,7 +14,7 @@
       flex-wrap: wrap;
       align-items: center;
       justify-content: space-around;
-      gap: 50px;
+      gap: 40px;
 
       button {
         border: none;
@@ -64,30 +64,36 @@
 
 @media only screen and (min-width:120px) and (max-width:1023px) {
 
+  h2 {
+    font-size: 16px;
+  }
+
   .main-container {
-    
+
 
     .countries {
 
-     .slider-container {
-          padding: 0;
+      .slider-container {
+        justify-content: space-evenly;
+        padding: 0;
+        gap: 0;
 
-          .cards-container{
-            margin-bottom: 10px;
+        .cards-container {
+          margin-bottom: 10px;
 
-            .card {
+          .card {
 
-              img {
-                width: 150px;
-                height: 150px;
-              }
+            img {
+              width: 150px;
+              height: 150px;
+            }
 
-              h2 {
-                font-size: 16px;
-                max-width: 150px;
-              }
+            h2 {
+              font-size: 16px;
+              max-width: 150px;
             }
           }
+        }
       }
     }
   }

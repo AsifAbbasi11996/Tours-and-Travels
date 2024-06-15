@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import '../assets/css/Navbar.css'
-import logo from '../assets/images/logo_new.avif'
+// import logo from '../assets/images/logo_new.avif'
 
 const Navbar = () => {
 
@@ -23,7 +23,7 @@ const Navbar = () => {
           </div>
 
           <div className="logo">
-            <NavLink to='/'><img src={logo} alt="" /></NavLink>
+            <NavLink to='/'><h2 className='logo-name'>Travor.com</h2></NavLink>
           </div>
           <div className="lists">
             <ul className={click ? 'nav-links active' : 'nav-links'}>

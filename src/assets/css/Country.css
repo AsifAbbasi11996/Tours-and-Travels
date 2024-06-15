@@ -1,8 +1,8 @@
-.country-container{
+.country-container {
     padding: 40px;
     padding-top: 0;
 
-    h2{
+    h2 {
         font-size: 30px;
         text-align: center;
     }
@@ -15,9 +15,9 @@
         flex-wrap: wrap;
         justify-content: space-evenly;
         gap: 50px;
-    
+
         .cards-container {
-    
+
             .card {
                 position: relative;
                 border-radius: 8px;
@@ -26,7 +26,7 @@
                 transition: transform 0.2s;
                 color: black;
                 width: 325px;
-    
+
                 img {
                     width: 325px;
                     height: 250px;
@@ -35,7 +35,7 @@
                     object-fit: cover;
                     object-position: 25% 75%;
                 }
-    
+
                 h2 {
                     font-size: 20px;
                     color: #545454;
@@ -53,7 +53,7 @@
                     margin-top: 2%;
                 }
             }
-    
+
             .card:hover {
                 transform: scale(1.05);
             }
@@ -61,37 +61,39 @@
     }
 }
 
-@media only screen and (min-width:120px) and (max-width:1023px){
+@media only screen and (min-width:120px) and (max-width:1023px) {
 
-    .country-container{
+    .country-container {
 
         h2 {
             font-size: 20px;
             margin-bottom: 20px;
-            
+
         }
 
-        .slider-container{
+        .slider-container {
             padding: 0;
 
-            .cards-container{
+            .cards-container {
 
-                .card{
+                .card {
+                    width: 250px;
 
-                    img{
+
+                    img {
                         width: 250px;
                         height: 150px;
                     }
 
-                    h2{
+                    h2 {
                         font-size: 16px;
                     }
 
-                    p{
+                    p {
                         font-size: 12px;
                         margin-bottom: 10px;
 
-                        span{
+                        span {
                             font-weight: bold;
                         }
                     }

@@ -26,6 +26,7 @@
                 font-weight: 600;
                 line-height: 1.1;
                 margin-bottom: 20px;
+                text-align: left;
 
                 & span {
                     color: rgb(255, 106, 0);
@@ -83,6 +84,12 @@
 
         p {
             font-size: large;
+        }
+
+        input{
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid rgba(0, 0, 0, 0.314);
         }
 
         select {
@@ -212,6 +219,7 @@
                         padding: 10px 15px;
                         margin-top: 10px;
                         border-radius: 20px;
+                        cursor: pointer;
 
                         span {
                             margin-right: 10px;
@@ -277,7 +285,9 @@
                         p {
                             i {
                                 margin-right: 5px;
+                                color: red;
                             }
+
                         }
 
                         button {
@@ -333,6 +343,7 @@
                         p {
                             i {
                                 margin-right: 5px;
+                                color: red;
                             }
                         }
 
@@ -350,9 +361,9 @@
 @media only screen and (min-width:120px) and (max-width:1023px) {
 
     .main {
-        padding: 0px 20px;
 
         .home-container {
+            padding: 0 20px;
             text-align: center;
             flex-direction: column;
 
@@ -366,7 +377,7 @@
 
                 h1 {
                     font-size: 24px;
-
+                    text-align: center;
 
                 }
 
@@ -399,7 +410,8 @@
         }
 
         .content {
-            align-items: flex-start;
+            align-items: center;
+            justify-content: center;
             flex-direction: column;
             gap: 0;
             margin: 0 30px;
@@ -414,22 +426,34 @@
                     font-weight: 500;
                 }
 
+                input{
+                    padding: 5px;
+                    width: 250px;
+                }
+
                 select {
                     font-size: 15px;
+                    width: 250px;
 
                 }
 
-                .btn {
-                    margin-top: 20px;
+            }
 
-                    a {
-                        font-size: 15px;
-                    }
+            .btn {
+                margin-top: 5px;
+                
+
+                a {
+                    font-size: 14px;
                 }
             }
 
         }
 
+        h2{
+            font-size: 18px;
+            margin: 8% 8%;
+        }
         
 
         .places {
@@ -438,6 +462,12 @@
             
             .first{
                 padding: 20px 52px;
+                width: 320px;
+
+                h2 {
+                    font-size: 20px;
+                    margin-bottom: 10px;
+                }
             }
 
             .second {

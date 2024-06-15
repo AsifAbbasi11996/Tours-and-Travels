@@ -14,10 +14,6 @@
     padding: 0;
 }
 
-.logo {
-    width: 150px;
-}
-
 .invert {
     filter: invert(1);
     width: 100%;

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom'
 import '../assets/css/Home.css'
 import Home_Slider from './Home_Slider'
@@ -7,6 +7,19 @@ import newyork from '../assets/images/newyork.webp'
 import mumbai from '../assets/images/mumbai.jpeg'
 
 const Home = () => {
+    const [currentDate, setCurrentDate] = useState('');
+
+    useEffect(() => {
+        // Get the current date in YYYY-MM-DD format
+        const today = new Date();
+        const yyyy = today.getFullYear();
+        const mm = String(today.getMonth() + 1).padStart(2, '0'); // Months start at 0!
+        const dd = String(today.getDate()).padStart(2, '0');
+        const formattedDate = `${yyyy}-${mm}-${dd}`;
+
+        // Set the current date
+        setCurrentDate(formattedDate);
+    }, []);
 
     return (
         <>
@@ -21,7 +34,7 @@ const Home = () => {
                         <p>Travor is one of the most popular Travel
                             agency for those who want to explore the
                             wold and try to make adventure.</p>
-                        <button><NavLink>Plan Trip</NavLink></button>
+                        <button><NavLink to='/packages'>Plan Trip</NavLink></button>
                     </div>
                     <div className="right">
                         <div className="img">
@@ -44,7 +57,7 @@ const Home = () => {
 
                     <div class="grid">
                         <p>Date</p>
-                        <input type="date" />
+                        <input type="date" id='date-input' name='date-input' value={currentDate} onChange={(e) => setCurrentDate(e.target.value)} />
                     </div>
 
                     <div class="grid">
@@ -66,7 +79,7 @@ const Home = () => {
                     </div>
                 </div>
 
-                    <h2>Choose the continent of the place you want to visit</h2>
+                <h2>Choose the continent of the place you want to visit</h2>
                 <div className="places">
                     <div className="first">
                         <h2>Package Offers</h2>
@@ -88,14 +101,14 @@ const Home = () => {
                             <div className="text">
                                 <h3>New York City</h3>
                                 <p><span><i class="ri-map-pin-line"></i></span>U.S.A</p>
-                                <button><span><i class="ri-play-list-add-line"></i></span>Book Now</button>
+                                <NavLink to=''><button><span><i class="ri-play-list-add-line"></i></span>Book Now</button></NavLink>
                             </div>
                         </div>
                         <div className="city city2">
                             <div className="text">
                                 <h3>Mumbai City</h3>
                                 <p><span><i class="ri-map-pin-line"></i></span>India</p>
-                                <button><span><i class="ri-play-list-add-line"></i></span>Book Now</button>
+                                <NavLink to=''><button><span><i class="ri-play-list-add-line"></i></span>Book Now</button></NavLink>
                             </div>
                             <div className="img">
                                 <img src={mumbai} alt="" />
@@ -104,24 +117,28 @@ const Home = () => {
                     </div>
                     <div className="third">
                         <div className="country country1">
-                            <div className="img">
-                                <p className='citylocation'><span><i class="ri-map-pin-line"></i></span>UAE</p>
-                                <div className="rating">
-                                    <p>Dubai</p>
-                                    <p><i class="ri-star-line"></i><i class="ri-star-line"></i><i class="ri-star-line"></i><i class="ri-star-line"></i><i class="ri-star-line"></i></p>
-                                    <button>Book Now</button>
+                            <NavLink to=''>
+                                <div className="img">
+                                    <p className='citylocation'><span><i class="ri-map-pin-line"></i></span>UAE</p>
+                                    <div className="rating">
+                                        <p>Dubai</p>
+                                        <p><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-half-line"></i><i class="ri-star-line"></i></p>
+                                        <button>Book Now</button>
+                                    </div>
                                 </div>
-                            </div>
+                            </NavLink>
                         </div>
                         <div className="country country2">
-                            <div className="img">
-                                <p className='citylocation'><span><i class="ri-map-pin-line"></i></span>Thailand</p>
-                                <div className="rating">
-                                    <p>Bali</p>
-                                    <p><i class="ri-star-line"></i><i class="ri-star-line"></i><i class="ri-star-line"></i><i class="ri-star-line"></i><i class="ri-star-line"></i></p>
-                                    <button>Book Now</button>
+                            <NavLink to=''>
+                                <div className="img">
+                                    <p className='citylocation'><span><i class="ri-map-pin-line"></i></span>Thailand</p>
+                                    <div className="rating">
+                                        <p>Bali</p>
+                                        <p><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-half-line"></i></p>
+                                        <button>Book Now</button>
+                                    </div>
                                 </div>
-                            </div>
+                            </NavLink>
                         </div>
                     </div>
                 </div>
