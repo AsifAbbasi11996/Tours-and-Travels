@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.all-places-container{
+    
+
+    .four-images{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+
+        .img{
+            width: 42%;
+            height: 400px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            background-color: rgb(119, 119, 119);
+        }
+    }
+}

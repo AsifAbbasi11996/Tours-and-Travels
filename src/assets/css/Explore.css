@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.explore-container{
+    
+    .img{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 500px;
+        background-image: url('../images/island1.jpg'), linear-gradient(0deg, #000000 0%, rgba(0, 0, 0, 0)50%);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        .light-background{
+            background: rgba(0, 0, 0, .6);
+        }
+    }
+}

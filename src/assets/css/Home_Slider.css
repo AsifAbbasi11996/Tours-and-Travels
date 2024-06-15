@@ -1,0 +1,242 @@
+.main-container {
+
+  .explore-places {
+
+    .head_text {
+      font-size: 30px;
+      padding: 0px 80px;
+    }
+
+    .slider-container {
+      padding: 20px;
+      position: relative;
+      margin: auto;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+
+
+      button {
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+
+        i {
+          font-size: 50px;
+          color: white;
+          border-radius: 50px;
+          background: #878585;
+        }
+      }
+
+      .cards-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+
+        .card {
+          position: relative;
+          border-radius: 8px;
+          overflow: hidden;
+          text-align: center;
+          transition: transform 0.2s;
+
+          img {
+            width: 325px;
+            height: 250px;
+            display: block;
+            border-radius: 10px;
+            object-fit: cover;
+            object-position: 25% 75%;
+          }
+
+          h2 {
+            color: #545454;
+            margin: 10px 0;
+          }
+        }
+
+        .card:hover {
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+
+  .honeymoon-packages {
+
+    .head_text {
+      font-size: 30px;
+      padding: 0px 80px;
+    }
+
+    .slider-container {
+      padding: 20px 20px;
+      position: relative;
+      margin: auto;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+
+      button {
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+
+        i {
+          font-size: 50px;
+          color: white;
+          border-radius: 50px;
+          background: #878585;
+        }
+      }
+
+      .cards-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+
+        .card {
+          position: relative;
+          border-radius: 8px;
+          overflow: hidden;
+          text-align: center;
+          transition: transform 0.2s;
+
+          img {
+            width: 325px;
+            height: 250px;
+            display: block;
+            border-radius: 10px;
+          }
+
+          h2 {
+            position: absolute;
+            bottom: 16px;
+            left: 0;
+            right: 0;
+            z-index: 2;
+            font-size: 1.5em;
+            padding: 8px;
+            margin: 0;
+            border-radius: 4px;
+            color: white;
+          }
+        }
+
+        .card:hover {
+          transform: scale(1.05);
+        }
+
+        .card::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          z-index: 1;
+          background: linear-gradient(0deg, #000000 0%, rgba(0, 0, 0, 0)50%);
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width:120px) and (max-width:1023px) {
+
+  .main-container {
+    margin: 10px 0 20px 0;
+
+    .explore-places {
+
+      .head_text {
+        font-size: 16px;
+        padding: 5px;
+        text-align: center;
+
+      }
+
+      .slider-container {
+        padding: 0;
+
+        button {
+
+          i {
+            font-size: 30px;
+            color: white;
+            border-radius: 50px;
+            background: #878585;
+          }
+        }
+
+        .cards-container {
+          overflow: hidden;
+
+          .card {
+            margin: 10px 10px;
+            transition: none;
+
+            img {
+              width: 250px;
+              height: 170px;
+            }
+
+            h2 {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+
+    .honeymoon-packages {
+
+      .head_text {
+        font-size: 16px;
+        padding: 5px;
+        text-align: center;
+
+      }
+
+      .slider-container {
+        padding: 0;
+
+        button {
+
+
+          i {
+            font-size: 30px;
+            color: white;
+            border-radius: 50px;
+            background: #878585;
+          }
+        }
+
+        .cards-container {
+          overflow: hidden;
+
+          .card {
+            margin: 10px 10px;
+            overflow: visible;
+            transition: none;
+
+            img {
+              width: 250px;
+              height: 170px;
+            }
+
+            h2 {
+              font-size: 16px;
+              padding: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

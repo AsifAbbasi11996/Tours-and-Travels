@@ -1,0 +1,125 @@
+.main-hotel {
+    padding: 20px 50px;
+    font-family: "Poppins", sans-serif;
+
+    .hotel-container {
+        padding: 20px 50px;
+        line-height: 2;
+        border-radius: 15px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.396);
+
+        h2{
+            margin: 0;
+            font-size: 40px;
+        }
+
+        p{
+            margin: 0;
+            font-size: 24px;
+        }
+
+        i{
+            font-size: 25px;
+            color: #7c7c7c;
+            position: absolute;
+            padding-left: 10px;
+            top: 22px;
+        }
+
+        input{
+            font-size: 18px;
+            padding: 15px;
+            margin: 20px 0px;
+            border-radius: 5px;
+            border: 2px solid rgb(130, 130, 130);
+        }
+
+        .name{
+            width: 600px;
+            padding-left: 40px;
+        }
+
+        .date{
+            margin-right: 20px;
+        }
+
+        .search-bar{
+            position: relative;
+        }
+
+        select{
+            font-size: 16px;
+            padding: 18px;
+            margin-right: 20px;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 18px 20px;
+            background-color: rgb(255, 106, 0);
+            border-radius: 6px;
+            border: none;
+
+            a {
+                font-size: 18px;
+                font-weight: 500;
+                color: white;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width:120px) and (max-width:1023px) {
+
+    .main-hotel{
+        padding: 15px 30px;
+
+        .hotel-container{
+            padding: 10px 20px;
+
+            h2{
+                font-size: 24px;
+            }
+
+            p{
+                font-size: 16px;
+                line-height: 1.5;
+            }
+
+            i{
+                font-size: 18px;
+                top: 12px;
+            }
+    
+            input{
+                font-size: 18px;
+                padding: 8px;
+                margin: 20px 0px;
+                
+            }
+    
+            .name{
+                width: 100%;
+                padding-left: 40px;
+                margin: 10px 0;
+            }
+
+            .date{
+                margin-bottom: 5px;
+            }
+
+            select{
+                padding: 10px;
+                margin: 25px 20px 25px 0px;
+            }
+
+            button {
+                padding: 12px 12px;
+                a{
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}

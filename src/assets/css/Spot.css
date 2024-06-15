@@ -1,0 +1,233 @@
+.spot-container {
+    padding: 40px;
+    padding-top: 0;
+
+    h2 {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .slider-container {
+        padding: 30px 0px;
+
+        .cards-container {
+            padding: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.396);
+
+
+            .card {
+                display: flex;
+                justify-content: center;
+                gap: 60px;
+                margin-bottom: 20px;
+                transition: transform 0.2s;
+
+                img {
+                    width: 325px;
+                    height: 250px;
+                    display: block;
+                    border-radius: 10px;
+                    object-fit: cover;
+                    object-position: 25% 75%;
+                }
+
+                h2 {
+                    font-size: 20px;
+                    color: #545454;
+                    margin: 10px 0;
+                    max-width: 320px;
+                }
+
+                .country{
+                    color: black;
+                }
+
+                .details {
+                    line-height: 2;
+
+                    p {
+
+                        span {
+                            font-weight: bold;
+
+                        }
+                    }
+
+
+                    .category {
+                        font-weight: bold;
+                        font-style: italic;
+                    }
+                }
+            }
+
+            .card:hover {
+                transform: scale(1.05);
+            }
+
+            .more-details {
+                padding: 10px;
+                line-height: 2;
+                
+
+                .flow-short {
+                    display: flex;
+                    justify-content: space-around;
+                    margin-bottom: 20px;
+
+                    .flex {
+                        ul {
+                            margin-left: 30px;
+
+                            li{
+                                p{
+                                    font-size: 18px;
+                                }
+                            }
+                        }
+
+                        .short-itinerary{
+                            margin-left: 30px;
+                            font-size: 18px;
+                        }
+                    }
+                }
+
+                p {
+                    font-size: 20px;
+
+                    span {
+                        font-weight: bold;
+                    }
+
+                    .flow {
+                        font-weight: normal;
+                    }
+                }
+
+                .margin {
+                    margin-left: 50px;
+                }
+
+                .itinerary-day {
+                    margin-left: 100px;
+
+                    h3 {
+                        margin-bottom: 5px;
+                    }
+
+                    ul {
+                        font-size: 18px;
+                        list-style-type: disc;
+                        margin-left: 20px;
+                    }
+                } 
+
+                .questions {
+                    margin-top: 20px;
+
+                    .faq {
+                        margin-top: 10px;
+
+                        p {
+                            font-size: 18px;
+                            margin-left: 100px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width:120px) and (max-width:1023px) {
+    .spot-container {
+        padding: 10px;
+
+        h2 {
+            font-size: 16px;
+        }
+
+        .slider-container{
+
+            .cards-container{
+
+                .card{
+                    flex-direction: column;
+                    gap: 10px;
+                    align-items: center;
+
+                    h2{
+                        font-size: 16px;
+                    }
+                }
+
+                .more-details{
+                    padding: 5px 10px;
+
+                    .flow-short{
+                        flex-direction: column;
+    
+                        .flex{
+                           
+                            p{
+                                font-size: 16px;
+                            }
+    
+                            ul {
+                                
+                                li{
+                                    
+                                    p{
+                                        font-size: 15px !important;
+                                    }
+                                }
+                            }
+    
+                            .short-itinerary{
+                                font-size: 15px !important;
+                                margin-left: 20px !important;
+                            }
+                        }
+                    }
+
+                    p {
+                        font-size: 16px;
+                    }
+
+                    .margin{
+                        margin-left: 0px;
+                    }
+
+                    .itinerary-day{
+                        margin-left: 20px;
+
+                        h3{
+                            font-size: 14px;
+                        }
+
+                        ul{
+                            li{
+                                font-size: 15px;
+                                line-height: 1.5;
+                                margin-bottom: 10px;
+                            }
+                        }
+                    }
+
+                    .questions {
+    
+                        .faq {
+                        
+                            p {
+                                font-size: 15px;
+                                margin-left: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    margin: 10px 0;
+}
+
+h2 {
+    text-align: center;
+    color: rgb(89, 89, 89);
+}
+
+a {
+    text-decoration: none;
+}
+
+@media only screen and (min-width:120px) and (max-width:1023px) {
+    h1 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+}

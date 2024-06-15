@@ -1,0 +1,102 @@
+.country-container{
+    padding: 40px;
+    padding-top: 0;
+
+    h2{
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .slider-container {
+        padding: 30px 20px;
+        position: relative;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        gap: 50px;
+    
+        .cards-container {
+    
+            .card {
+                position: relative;
+                border-radius: 8px;
+                overflow: hidden;
+                text-align: center;
+                transition: transform 0.2s;
+                color: black;
+    
+                img {
+                    width: 325px;
+                    height: 250px;
+                    display: block;
+                    border-radius: 10px;
+                    object-fit: cover;
+                    object-position: 25% 75%;
+                }
+    
+                h2 {
+                    font-size: 20px;
+                    color: #545454;
+                    margin: 10px 0;
+                    max-width: 320px;
+                }
+
+                p {
+                    span {
+                        font-weight: bold;
+                    }
+                }
+
+                .category {
+                    margin-top: 2%;
+                }
+            }
+    
+            .card:hover {
+                transform: scale(1.05);
+            }
+        }
+    }
+}
+
+@media only screen and (min-width:120px) and (max-width:1023px){
+
+    .country-container{
+
+        h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            
+        }
+
+        .slider-container{
+            padding: 0;
+
+            .cards-container{
+
+                .card{
+
+                    img{
+                        width: 250px;
+                        height: 150px;
+                    }
+
+                    h2{
+                        font-size: 16px;
+                    }
+
+                    p{
+                        font-size: 12px;
+                        margin-bottom: 10px;
+
+                        span{
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
