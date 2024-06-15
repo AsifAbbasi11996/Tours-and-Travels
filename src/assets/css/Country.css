@@ -25,6 +25,7 @@
                 text-align: center;
                 transition: transform 0.2s;
                 color: black;
+                width: 325px;
     
                 img {
                     width: 325px;
