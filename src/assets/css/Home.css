@@ -86,7 +86,7 @@
             font-size: large;
         }
 
-        input{
+        input {
             padding: 5px;
             border-radius: 5px;
             border: 1px solid rgba(0, 0, 0, 0.314);
@@ -99,22 +99,29 @@
             border: 1px solid rgba(0, 0, 0, 0.314);
         }
 
-        button {
-            padding: 15px 20px;
-            background-color: rgb(255, 106, 0);
-            border-radius: 6px;
-            border: none;
+        .btn {
 
-            a {
-                font-size: 18px;
-                font-weight: 500;
-                color: white;
-                text-decoration: none;
-            }
+            
+                button {
+                    padding: 15px 20px;
+                    background-color: rgb(255, 106, 0);
+                    border-radius: 6px;
+                    border: none;
+                    cursor: pointer;
+
+                    a {
+                        font-size: 18px;
+                        font-weight: 500;
+                        color: white;
+                        text-decoration: none;
+                    }
+                }
+
+
         }
     }
 
-    h2{
+    h2 {
         margin: 5%;
         margin-bottom: 0%;
     }
@@ -426,7 +433,7 @@
                     font-weight: 500;
                 }
 
-                input{
+                input {
                     padding: 5px;
                     width: 250px;
                 }
@@ -441,7 +448,7 @@
 
             .btn {
                 margin-top: 5px;
-                
+
 
                 a {
                     font-size: 14px;
@@ -450,17 +457,17 @@
 
         }
 
-        h2{
+        h2 {
             font-size: 18px;
             margin: 8% 8%;
         }
-        
+
 
         .places {
             flex-direction: column;
             row-gap: 35px;
-            
-            .first{
+
+            .first {
                 padding: 20px 52px;
                 width: 320px;
 

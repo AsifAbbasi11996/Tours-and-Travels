@@ -1,0 +1,110 @@
+::-webkit-scrollbar {
+    width: 25px;
+}
+
+.main-new_container {
+
+    .explore-places {
+
+        .head_text {
+            font-size: 30px;
+            padding: 0px 80px;
+        }
+
+        .slider-container {
+            margin: 0 35px;
+            border-radius: 10px;
+
+            .cards-container {
+                padding: 20px;
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                width: 100%;
+                overflow-x: scroll;
+
+
+                .card {
+                    position: relative;
+                    border-radius: 8px;
+                    text-align: center;
+                    transition: transform 0.2s;
+
+                    img {
+                        width: 325px;
+                        height: 250px;
+                        display: block;
+                        border-radius: 10px;
+                        object-fit: cover;
+                        object-position: 25% 75%;
+                    }
+
+                    h2 {
+                        color: #545454;
+                        margin: 10px 0;
+                    }
+                }
+
+                .card:hover {
+                    transform: scale(1.05);
+                }
+            }
+        }
+    }
+
+    .honeymoon-packages {
+
+        .head_text {
+            font-size: 30px;
+            padding: 0px 80px;
+        }
+
+        .slider-container {
+            margin: 0 35px;
+            border-radius: 10px;
+
+            .cards-container {
+                padding: 20px;
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                width: 100%;
+                overflow-x: scroll;
+
+
+                .card {
+                    position: relative;
+                    border-radius: 8px;
+                    text-align: center;
+                    transition: transform 0.2s;
+
+                    img {
+                        width: 325px;
+                        height: 250px;
+                        display: block;
+                        border-radius: 10px;
+                        object-fit: cover;
+                        
+                    }
+
+                    h2 {
+                        position: absolute;
+                        bottom: 16px;
+                        left: 0;
+                        right: 0;
+                        z-index: 2;
+                        font-size: 1.5em;
+                        padding: 8px;
+                        margin: 0;
+                        border-radius: 4px;
+                        color: white;
+                    }
+                }
+
+                .card:hover {
+                    transform: scale(1.05);
+                }
+            }
+        }
+    }
+}
