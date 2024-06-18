@@ -38,7 +38,7 @@ const Continent = () => {
             <div className="continent-header">
                 <h1>Best Countries to visit in {continent}</h1>
             </div>
-            <h2>Choose the Country of the place you want to visit</h2>
+            <h2>Choose the Country you want to visit</h2>
             <div className="main-container">
                 <div className="countries">
                     <div className="slider-container">

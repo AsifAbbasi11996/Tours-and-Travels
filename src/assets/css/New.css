@@ -4,54 +4,7 @@
 
 .main-new_container {
 
-    .explore-places {
-
-        .head_text {
-            font-size: 30px;
-            padding: 0px 80px;
-        }
-
-        .slider-container {
-            margin: 0 35px;
-            border-radius: 10px;
-
-            .cards-container {
-                padding: 20px;
-                display: flex;
-                align-items: center;
-                gap: 20px;
-                width: 100%;
-                overflow-x: scroll;
-
-
-                .card {
-                    position: relative;
-                    border-radius: 8px;
-                    text-align: center;
-                    transition: transform 0.2s;
-
-                    img {
-                        width: 325px;
-                        height: 250px;
-                        display: block;
-                        border-radius: 10px;
-                        object-fit: cover;
-                        object-position: 25% 75%;
-                    }
-
-                    h2 {
-                        color: #545454;
-                        margin: 10px 0;
-                    }
-                }
-
-                .card:hover {
-                    transform: scale(1.05);
-                }
-            }
-        }
-    }
-
+    .explore-places,
     .honeymoon-packages {
 
         .head_text {
@@ -81,11 +34,33 @@
                     img {
                         width: 325px;
                         height: 250px;
-                        display: block;
                         border-radius: 10px;
                         object-fit: cover;
-                        
                     }
+
+                    h2 {
+                        color: #545454;
+                        margin: 10px 0;
+                    }
+                }
+
+                .card:hover {
+                    transform: scale(1.05);
+                }
+            }
+        }
+    }
+
+    .honeymoon-packages {
+
+        .slider-container {
+
+            .cards-container {
+
+                .card {
+                    width: 325px;
+                    height: 250px;
+                    border-radius: 10px;
 
                     h2 {
                         position: absolute;
@@ -100,9 +75,78 @@
                         color: white;
                     }
                 }
+            }
+        }
+    }
+}
 
-                .card:hover {
-                    transform: scale(1.05);
+@media only screen and (min-width:120px) and (max-width:1023px) {
+
+    .main-new_container {
+        padding-bottom: 50px;
+
+        .explore-places,
+        .honeymoon-packages {
+
+            .head_text {
+                font-size: 20px;
+                padding: 0;
+                margin: 0;
+            }
+
+            .slider-container {
+                margin: 0 10px;
+
+                .cards-container {
+                    align-items: normal;
+                    padding: 10px;
+
+                    .card {
+                        transition: none;
+
+                        img {
+                            width: 170px !important;
+                            height: 150px !important;
+                        }
+
+                        h2 {
+                            font-size: 14px;
+                        }
+                    }
+
+                    .card:hover {
+                        transform: none;
+                    }
+                }
+            }
+        }
+
+        .honeymoon-packages {
+
+            .slider-container {
+
+                .cards-container {
+
+                    .card {
+                        width: 170px;
+                        height: 150px;
+
+                        h2 {
+                            font-size: 14px;
+                        }
+                    }
+
+                    .card::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        z-index: 1;
+                        background: linear-gradient(0deg, #000000 0%, rgba(0, 0, 0, 0) 50%);
+                        border-radius: 10px;
+                    }
                 }
             }
         }
