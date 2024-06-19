@@ -18,9 +18,13 @@ import SignUp from './components/SignUp';
 import Continent from './components/Continent';
 import Country from './components/Country';
 import Spot from './components/Spot';
-
-//pages
 import HomePage from './pages/HomePage';
+import AddCountry from './Admin/AddCountry';
+import AdminLogin from './Admin/AdminLogin';
+import Admin from './Admin/Admin';
+import AddPackage from './Admin/AddPackage';
+import AddPlace from './Admin/AddPlace';
+import AddSpot from './Admin/AddSpot';
 
 function App() {
   return (
@@ -45,6 +49,13 @@ function App() {
         <Route path='/continent/:continent' element={<Continent />} />
         <Route path='/country/:country' element={<Country />} />
         <Route path='/spot/:spot' element={<Spot />} />
+        <Route path='/addcountry' element={<AddCountry />} />
+        <Route path='/adminlogin' element={<AdminLogin />} />
+        <Route path='/admin' element={<Admin />} />
+        <Route path='/addpackage' element={<AddPackage />} />
+        <Route path='/addplace' element={<AddPlace />} />
+        <Route path='/addspot' element={<AddSpot />} />
+
       </Routes>
     </>
   );
