@@ -51,9 +51,6 @@ const Navbar = () => {
             <button><NavLink to='/login' className="nav-link"
               activeClassName="active">Login/SignUp</NavLink></button>
           </div>
-
-
-
         </div>
       </div>
     </>

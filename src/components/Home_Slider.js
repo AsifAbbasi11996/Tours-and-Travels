@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import '../assets/css/New.css';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 
 // card1 images
 import Island from '../assets/images/island.avif'
@@ -25,6 +25,33 @@ import Darjeeling from '../assets/images/darjeeling.jpeg'
 
 const Home_Slider = () => {
 
+    const location = useLocation()
+    const { category } = location.state || {}
+    const [data, setData] = useState([])
+
+    const getData = async () => {
+        const response = await fetch('https://codify-api-541e.onrender.com/travel/package/all', {
+            method: 'GET',
+            header: {
+                "Content-type": "application/json"
+            }
+        })
+
+        const responsedata = await response.json();
+
+        if (!responsedata) {
+            console.log('error')
+        } else {
+            console.log(responsedata);
+            setData(responsedata);
+        }
+        console.log(category)
+    }
+
+    useEffect(() => {
+        getData(category);
+    }, [])
+
     return (
         <>
             <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
@@ -32,56 +59,62 @@ const Home_Slider = () => {
                 <div className="explore-places">
                     <h2 className='head_text'>Themes you can Explore</h2>
                     <div className="slider-container">
-                        <div className="cards-container">
-                            <div className="card">
-                                <NavLink to='/explore-themes'>
-                                    <img src={Island} className="slider-image" />
-                                </NavLink>
-                                <h2>Beaches and Islands</h2>
-                            </div>
-                            <div className="card">
-                                <NavLink to='/explore-themes'>
-                                    <img src={Adventure} className="slider-image" />
-                                </NavLink>
-                                <h2>Adventures</h2>
-                            </div>
-                            <div className="card">
-                                <NavLink to='/explore-themes'>
-                                    <img src={HillStation} className="slider-image" />
-                                </NavLink>
-                                <h2>Hill Stations</h2>
-                            </div>
-                            <div className="card">
-                                <NavLink to='/explore-themes'>
-                                    <img src={Religious} className="slider-image" />
-                                </NavLink>
-                                <h2>Religious</h2>
-                            </div>
-                            <div className="card">
-                                <NavLink to='/explore-themes'>
-                                    <img src={Historical} className="slider-image" />
-                                </NavLink>
-                                <h2>Historical</h2>
-                            </div>
-                            <div className="card">
-                                <NavLink to='/explore-themes'>
-                                    <img src={WildLife} className="slider-image" />
-                                </NavLink>
-                                <h2>WildLife Sanctuary</h2>
-                            </div>
-                            <div className="card">
-                                <NavLink to='/explore-themes'>
-                                    <img src={Tokyo} className="slider-image" />
-                                </NavLink>
-                                <h2>Urban Experiences</h2>
-                            </div>
-                            <div className="card">
-                                <NavLink to='/explore-themes'>
-                                    <img src={Jordan} className="slider-image" />
-                                </NavLink>
-                                <h2>Unique Destinations</h2>
-                            </div>
-                        </div>
+                        {data.map((response, id) => {
+                            if (response.Category === category) {
+                                return (
+                                    <div className="cards-container">
+                                        <div className="card">
+                                            <NavLink to={`/explore/${response.Category}`} state={{ explore: response.Category }}>
+                                                <img src={Island} className="slider-image" />
+                                            </NavLink>
+                                            <h2>Beaches and Islands</h2>
+                                        </div>
+                                        <div className="card">
+                                            <NavLink to={`/explore/${response.Category}`} state={{ explore: response.Category }}>
+                                                <img src={Adventure} className="slider-image" />
+                                            </NavLink>
+                                            <h2>Adventures</h2>
+                                        </div>
+                                        <div className="card">
+                                            <NavLink to={`/explore/${response.Category}`} state={{ explore: response.Category }}>
+                                                <img src={HillStation} className="slider-image" />
+                                            </NavLink>
+                                            <h2>Hill Stations</h2>
+                                        </div>
+                                        <div className="card">
+                                            <NavLink to={`/explore/${response.Category}`} state={{ explore: response.Category }}>
+                                                <img src={Religious} className="slider-image" />
+                                            </NavLink>
+                                            <h2>Religious</h2>
+                                        </div>
+                                        <div className="card">
+                                            <NavLink to={`/explore/${response.Category}`} state={{ explore: response.Category }}>
+                                                <img src={Historical} className="slider-image" />
+                                            </NavLink>
+                                            <h2>Historical</h2>
+                                        </div>
+                                        <div className="card">
+                                            <NavLink to={`/explore/${response.Category}`} state={{ explore: response.Category }}>
+                                                <img src={WildLife} className="slider-image" />
+                                            </NavLink>
+                                            <h2>WildLife Sanctuary</h2>
+                                        </div>
+                                        <div className="card">
+                                            <NavLink to={`/explore/${response.Category}`} state={{ explore: response.Category }}>
+                                                <img src={Tokyo} className="slider-image" />
+                                            </NavLink>
+                                            <h2>Urban Experiences</h2>
+                                        </div>
+                                        <div className="card">
+                                            <NavLink to={`/explore/${response.Category}`} state={{ explore: response.Category }}>
+                                                <img src={Jordan} className="slider-image" />
+                                            </NavLink>
+                                            <h2>Unique Destinations</h2>
+                                        </div>
+                                    </div>
+                                )
+                            }
+                        })}
                     </div>
                 </div>
 

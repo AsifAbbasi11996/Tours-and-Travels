@@ -1,17 +1,57 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Navbar from './Navbar'
+import { useLocation } from 'react-router-dom'
 import '../assets/css/Explore.css'
 
 const Explore = () => {
+
+    const location = useLocation();
+    const { explore } = location.state || {};
+
+    const [data, setData] = useState([])
+
+    const getData = async () => {
+        const response = await fetch('https://codify-api-541e.onrender.com/travel/package/all', {
+            method: 'GET',
+            header: {
+                "Content-type": "application/json"
+            }
+        })
+
+        const responsedata = await response.json();
+
+        if (!responsedata) {
+            console.log('error')
+        } else {
+            console.log(responsedata);
+            setData(responsedata);
+        }
+        console.log(explore);
+    }
+
+    useEffect(() => {
+        console.log(explore)
+        getData();
+    }, [])
+
     return (
         <>
             <Navbar />
             <div className="explore-container">
-                <div className="img">
-                    <div className="light-background"></div>
-                    <div className="text">
-                        <h1>Beaches and Islands</h1>
-                    </div>
+            <h1>Visit this {explore}</h1>
+                <div className="slider-container">
+                    {data.map((response, id) => {
+                        if (response.Category === explore) {
+                            return (
+                                <div className="img">
+                                    <div className="light-background">
+                                        <img src={response.Images[0]} alt="" />
+                                        <h2>{response.State}</h2>
+                                    </div>
+                                </div>
+                            )
+                        }
+                    })}
                 </div>
 
             </div>

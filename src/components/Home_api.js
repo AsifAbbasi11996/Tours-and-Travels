@@ -38,7 +38,6 @@ const Home_api = () => {
                     <div className="slider-container">
                         {data.map((response, id) => {
                             return (
-
                                 <div className="cards-container">
                                     <div className="card">
                                         <img src={response.SliderImages[0]} className="slider-image" />
