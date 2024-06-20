@@ -49,23 +49,6 @@ const Home_api = () => {
                         })}
                     </div>
                 </div >
-
-                {/* <div className="countries">
-                    <h2 className='head_text'>Honeymoon Packages</h2>
-                    <div className="slider-container">
-                        {data.map((response, id) => {
-                            return (
-
-                                <div className="cards-container">
-                                    <div className="card">
-                                        <img src={response.SliderImages[2]} className="slider-image" />
-                                        <h2>{response.Name}</h2>
-                                    </div>
-                                </div>
-                            )
-                        })}
-                    </div>
-                </div> */}
             </div >
 
         </>
