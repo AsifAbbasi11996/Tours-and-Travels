@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Admin.css'
+import { useLocation, useNavigate } from 'react-router-dom';
 const AddPackage = () => {
     const [packageId, setPackageId] = useState('');
     const [packageName, setPackageName] = useState('');
@@ -24,7 +25,19 @@ const AddPackage = () => {
     const [weather, setWeather] = useState('');
     const [data, setData] = useState([]);
     const [count, setCount] = useState(0);
+    const location = useLocation();
+    const navigate = useNavigate();
+    const condition = location.state || {};
 
+    const validate = () => {
+        if (condition !== "Pass") {
+            navigate(`/adminlogin`);
+        }
+    };
+
+    useEffect(() => {
+        validate();
+    }, [condition]);
     const getData = async () => {
         try {
             const response = await fetch("https://codify-api-541e.onrender.com/travel/package/all", {
