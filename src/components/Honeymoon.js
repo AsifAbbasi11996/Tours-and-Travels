@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import Navbar from './Navbar'
-import { useLocation, NavLink } from 'react-router-dom'
-import '../assets/css/Explore.css'
+import { useLocation } from 'react-router-dom'
+import '../assets/css/Honeymoon.css'
 
-const Explore = () => {
+
+const Honeymoon = () => {
 
     const location = useLocation();
     const { explore } = location.state || {};
@@ -38,20 +39,16 @@ const Explore = () => {
         <>
             <Navbar />
             <div className="explore-container">
-                <h1>Visit this {explore}</h1>
+            <h1>Visit this Honeymoon Packages</h1>
                 <div className="slider-container">
                     {data.map((response, id) => {
-                        if (response.Category === explore) {
+                        if (response.Honeymoon) {
                             return (
                                 <div className="cards">
-                                    <NavLink to={`/spot/${response.PackageName}`} state={{ spot: response.PackageName}}>
-                                        <div className="card">
-                                            <img src={response.Images[1]} alt="" />
-                                            <h2>{response.State}</h2>
-                                            <p><span>Package Name</span> : {response.PackageName}</p>
-                                            <p><span>Country : </span>{response.Country}</p>
-                                        </div>
-                                    </NavLink>
+                                    <div className="card">
+                                        <img src={response.Images[0]} alt="" />
+                                        <h2>{response.State}</h2>
+                                    </div>
                                 </div>
                             )
                         }
@@ -63,4 +60,4 @@ const Explore = () => {
     )
 }
 
-export default Explore
+export default Honeymoon

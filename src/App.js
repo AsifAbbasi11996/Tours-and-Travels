@@ -13,6 +13,7 @@ import HotelsPlaces from './components/HotelsPlaces';
 import PlacePackages from './components/PlacePackages';
 import Home_api from './components/Home_api';
 import Explore from './components/Explore';
+import Honeymoon from './components/Honeymoon';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
 import Continent from './components/Continent';
@@ -44,6 +45,7 @@ function App() {
         <Route path='/placespackages' element={<PlacePackages />} />
         <Route path='/home_api' element={<Home_api />} />
         <Route path='/explore/:explore' element={<Explore />} />
+        <Route path='/honeymoon' element={<Honeymoon />} />
         <Route path='/continent/:continent' element={<Continent />} />
         <Route path='/country/:country' element={<Country />} />
         <Route path='/spot/:spot' element={<Spot />} />
