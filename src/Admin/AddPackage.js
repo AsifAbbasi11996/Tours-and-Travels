@@ -40,7 +40,7 @@ const AddPackage = () => {
     }, [condition]);
     const getData = async () => {
         try {
-            const response = await fetch("https://codify-api-541e.onrender.com/travel/package/all", {
+            const response = await fetch("https://api-k7vh.onrender.com/travel/package/all", {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
@@ -81,7 +81,7 @@ const AddPackage = () => {
             Weather: weather,
         };
         try {
-            const response = await fetch("https://codify-api-541e.onrender.com/travel/package/add", {
+            const response = await fetch("https://api-k7vh.onrender.com/travel/package/add", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -187,8 +187,8 @@ const AddPackage = () => {
                     <input type="text" value={months} onChange={(e) => setMonths(e.target.value.split(','))} placeholder="Months (comma separated)" required />
                     <input type="text" value={category} onChange={(e) => setCategory(e.target.value)} placeholder="Category" required />
                     <input type="text" value={weather} onChange={(e) => setWeather(e.target.value)} placeholder="Weather" required />
-                    <button type="submit">Submit</button>
                 </form>
+                <button type="submit">Submit</button>
             </div>
             <div className="addpackage-content">
                 <h2>Total Packages: {count}</h2>

@@ -27,7 +27,7 @@ const AddSpot = () => {
     }, [condition]);
     const getData = async () => {
         try {
-            const response = await fetch("https://codify-api-541e.onrender.com/travel/spot/all", {
+            const response = await fetch("https://api-k7vh.onrender.com/travel/spot/all", {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
@@ -56,7 +56,7 @@ const AddSpot = () => {
             MustKnown: mustKnown,
         };
         try {
-            const response = await fetch("https://codify-api-541e.onrender.com/travel/spot.add", {
+            const response = await fetch("https://api-k7vh.onrender.com/travel/spot.add", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

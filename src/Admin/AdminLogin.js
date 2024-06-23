@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from "react-router-dom";
-
+import "./Admin.css";
 const AdminLogin = () => {
     const navigate = useNavigate()
     const gotToNextPage = () => {

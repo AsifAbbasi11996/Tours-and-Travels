@@ -43,7 +43,7 @@ const Admin = () => {
                     <button
                         onClick={() => setSelectedButton("button1")}
                         style={{
-                            backgroundColor: selectedButton === "button1" ? "#003bd4" : "inherit",
+                            backgroundColor: selectedButton === "button1" ? "#ff6a00" : "inherit",
                         }}
                     >
                         Add Country
@@ -51,7 +51,7 @@ const Admin = () => {
                     <button
                         onClick={() => setSelectedButton("button2")}
                         style={{
-                            backgroundColor: selectedButton === "button2" ? "#003bd4" : "inherit",
+                            backgroundColor: selectedButton === "button2" ? "#ff6a00" : "inherit",
                         }}
                     >
                         Add Package
@@ -59,7 +59,7 @@ const Admin = () => {
                     <button
                         onClick={() => setSelectedButton("button3")}
                         style={{
-                            backgroundColor: selectedButton === "button3" ? "#003bd4" : "inherit",
+                            backgroundColor: selectedButton === "button3" ? "#ff6a00" : "inherit",
                         }}
                     >
                         Add Place
@@ -67,7 +67,7 @@ const Admin = () => {
                     <button
                         onClick={() => setSelectedButton("button4")}
                         style={{
-                            backgroundColor: selectedButton === "button4" ? "#003bd4" : "inherit",
+                            backgroundColor: selectedButton === "button4" ? "#ff6a00" : "inherit",
                         }}
                     >
                         Add Spot

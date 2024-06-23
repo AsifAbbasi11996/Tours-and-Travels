@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import './Admin.css'
+import './Admin.css';
 import { useLocation, useNavigate } from 'react-router-dom';
+
 const AddCountry = () => {
     const [name, setName] = useState('');
     const [region, setRegion] = useState('');
@@ -8,8 +9,7 @@ const AddCountry = () => {
     const [continent, setContinent] = useState('');
     const [about, setAbout] = useState('');
     const [travelEssential, setTravelEssential] = useState('');
-    const [sliderImages, setSliderImages] = useState([]);
-    const [imageInput, setImageInput] = useState('');
+    const [sliderImages, setSliderImages] = useState([{ url: '' }]);
     const [description, setDescription] = useState('');
     const [faq, setFaq] = useState([{ question: '', answer: '' }]);
     const [mustKnown, setMustKnown] = useState('');
@@ -28,13 +28,14 @@ const AddCountry = () => {
     useEffect(() => {
         validate();
     }, [condition]);
+
     const getData = async () => {
         try {
-            const response = await fetch("https://codify-api-541e.onrender.com/travel/country/all", {
+            const response = await fetch("https://api-k7vh.onrender.com/travel/country/all", {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
-                }
+                },
             });
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
@@ -62,7 +63,7 @@ const AddCountry = () => {
             MustKnown: mustKnown,
         };
         try {
-            const response = await fetch("https://codify-api-541e.onrender.com/travel/country/add", {
+            const response = await fetch("https://api-k7vh.onrender.com/travel/country/add", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -82,7 +83,7 @@ const AddCountry = () => {
             setContinent('');
             setAbout('');
             setTravelEssential('');
-            setSliderImages([]);
+            setSliderImages([{ url: '' }]);
             setDescription('');
             setFaq([{ question: '', answer: '' }]);
             setMustKnown('');
@@ -104,9 +105,13 @@ const AddCountry = () => {
         setFaq([...faq, { question: '', answer: '' }]);
     };
 
-    const addSliderImage = () => {
-        setSliderImages([...sliderImages, imageInput]);
-        setImageInput('');
+    const handleSliderImageChange = (index, e) => {
+        const updatedSliderImages = sliderImages.map((item, i) => (i === index ? { ...item, url: e.target.value } : item));
+        setSliderImages(updatedSliderImages);
+    };
+
+    const addSliderImageField = () => {
+        setSliderImages([...sliderImages, { url: '' }]);
     };
 
     return (
@@ -120,19 +125,24 @@ const AddCountry = () => {
                     <input type="text" value={continent} onChange={(e) => setContinent(e.target.value)} placeholder="Continent" required />
                     <input type="text" value={about} onChange={(e) => setAbout(e.target.value)} placeholder="About" required />
                     <input type="text" value={travelEssential} onChange={(e) => setTravelEssential(e.target.value)} placeholder="Travel Essential" required />
-                    <input type="text" value={imageInput} onChange={(e) => setImageInput(e.target.value)} placeholder="Slider image" />
-                    <button type="button" onClick={addSliderImage}>Add Image</button>
+                    {sliderImages.map((item, index) => (
+                        <div key={index}>
+                            <input type="text" value={item.url} onChange={(e) => handleSliderImageChange(index, e)} placeholder="Slider Image URL" required />
+                        </div>
+                    ))}
+                    <button type="button" onClick={addSliderImageField}>Add Image</button>
                     <textarea value={description} onChange={(e) => setDescription(e.target.value)} placeholder="Description" required />
                     {faq.map((item, index) => (
-                        <div key={index}>
-                            <input type="text" name="question" value={item.question} onChange={(e) => handleFaqChange(index, e)} placeholder="Question" required />
+                        <div key={index} className='faq'>
+                            <textarea type="text" name="question" value={item.question} onChange={(e) => handleFaqChange(index, e)} placeholder="Question" required />
                             <textarea name="answer" value={item.answer} onChange={(e) => handleFaqChange(index, e)} placeholder="Answer" required />
                         </div>
                     ))}
                     <button type="button" onClick={addFaqField}>Add FAQ</button>
                     <input type="text" value={mustKnown} onChange={(e) => setMustKnown(e.target.value)} placeholder="Must Known" required />
-                    <button type="submit">Submit</button>
+                    
                 </form>
+                <button type="submit">Submit</button>
             </div>
             <div className="addcountry-content">
                 <h2>Total Countries: {count}</h2>
@@ -163,13 +173,13 @@ const AddCountry = () => {
                                 <td>{res.About}</td>
                                 <td>{res.TravelEssential}</td>
                                 <td>{res.SliderImages.map((img, i) => (
-                                    <img key={i} src={img} alt={`slider-${i}`} width="50" />
+                                    <img key={i} src={img.url} alt={`slider-${i}`} width="50" />
                                 ))}</td>
                                 <td>{res.Description}</td>
-                                <td>{res.FAQ.map((faq, i) => (
+                                <td>{res.FAQ.map((faqItem, i) => (
                                     <div key={i}>
-                                        <strong>Q: {faq.Question}</strong>
-                                        <p>A: {faq.Answer}</p>
+                                        <strong>Q: {faqItem.question}</strong>
+                                        <p>A: {faqItem.answer}</p>
                                     </div>
                                 ))}</td>
                                 <td>{res.MustKnown}</td>
@@ -183,3 +193,4 @@ const AddCountry = () => {
 };
 
 export default AddCountry;
+
