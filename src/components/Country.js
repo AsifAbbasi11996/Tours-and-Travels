@@ -11,7 +11,7 @@ const Country = () => {
     const [data, setData] = useState([])
 
     const getData = async () => {
-        const response = await fetch('https://codify-api-541e.onrender.com/travel/package/all', {
+        const response = await fetch('https://api-k7vh.onrender.com/travel/package/all', {
             method: 'GET',
             header: {
                 "Content-type": "application/json"

@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.explore-container {
+
+    .slider-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+        padding: 20px 0;
+
+        .cards {
+
+            .card {
+                width: 325px;
+
+                img {
+                    width: 325px;
+                    height: 250px;
+                    display: block;
+                    border-radius: 10px;
+                    object-fit: cover;
+                    object-position: 25% 75%;
+                }
+
+                h2{
+                    margin: 10px 0;
+                }
+
+                p{
+                    text-align: center;
+                    font-size: 20px;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+
+}

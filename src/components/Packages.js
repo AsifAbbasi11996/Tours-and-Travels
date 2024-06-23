@@ -11,7 +11,7 @@ const Packages = () => {
 
   const getData = async () => {
     try {
-      const response = await fetch('https://codify-api-541e.onrender.com/travel/package/all', {
+      const response = await fetch('https://api-k7vh.onrender.com/travel/package/all', {
         method: 'GET',
         headers: {
           'Content-type': 'application/json',

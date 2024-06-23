@@ -6,7 +6,7 @@ const Home_api = () => {
     const [data, setData] = useState([])
 
     const getData = async () => {
-        const response = await fetch('https://codify-api-541e.onrender.com/travel/country/all', {
+        const response = await fetch('https://api-k7vh.onrender.com/travel/country/all', {
             method: 'GET',
             header: {
                 "Content-type": "application/json"
@@ -38,7 +38,6 @@ const Home_api = () => {
                     <div className="slider-container">
                         {data.map((response, id) => {
                             return (
-
                                 <div className="cards-container">
                                     <div className="card">
                                         <img src={response.SliderImages[0]} className="slider-image" />

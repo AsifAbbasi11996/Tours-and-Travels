@@ -9,7 +9,6 @@ import HillStation from '../assets/images/hill_station.jpg'
 import Religious from '../assets/images/religious.jpg'
 import Historical from '../assets/images/Tajmahal.jpeg'
 import WildLife from '../assets/images/WildLife.jpg'
-import Tokyo from '../assets/images/Tokyo.jpeg'
 import Jordan from '../assets/images/Jordan.webp'
 
 // card2 images
@@ -71,7 +70,7 @@ const Packages_Slider = () => {
                             </div>
                             <div className="card">
                                 <NavLink to='/explore-themes'>
-                                    <img src={Tokyo} className="slider-image" />
+                                    <img src={Jordan} className="slider-image" />
                                 </NavLink>
                                 <h2>Urban Experiences</h2>
                             </div>
