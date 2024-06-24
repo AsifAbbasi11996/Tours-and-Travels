@@ -43,7 +43,7 @@ const SignUp = () => {
         } else {
             setErrorMessage('');
             console.log('Form submitted');
-            // Proceed with form submission logic
+           
         }
     };
 

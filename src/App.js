@@ -26,6 +26,7 @@ import Admin from './Admin/Admin';
 import AddPackage from './Admin/AddPackage';
 import AddPlace from './Admin/AddPlace';
 import AddSpot from './Admin/AddSpot';
+import State from './components/State';
 
 function App() {
   return (
@@ -49,6 +50,7 @@ function App() {
         <Route path='/continent/:continent' element={<Continent />} />
         <Route path='/country/:country' element={<Country />} />
         <Route path='/spot/:spot' element={<Spot />} />
+        <Route path='/state/:state' element={<State />} />
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<SignUp />} />
         <Route path='/addcountry' element={<AddCountry />} />

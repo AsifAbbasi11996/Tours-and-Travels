@@ -12,14 +12,14 @@ import WildLife from '../assets/images/WildLife.jpg'
 import Jordan from '../assets/images/Jordan.webp'
 
 // card2 images
-import Maldives from '../assets/images/maldives.webp'
-import Bali from '../assets/images/bali.webp'
-import Kerala from '../assets/images/Kerala.jpg'
-import Manali from '../assets/images/Manali.webp'
-import Ooty from '../assets/images/ooty.jpeg'
-import Srinagar from '../assets/images/Srinagar.webp'
-import Goa from '../assets/images/Goa.avif'
-import Darjeeling from '../assets/images/darjeeling.jpeg'
+// import Maldives from '../assets/images/maldives.webp'
+// import Bali from '../assets/images/bali.webp'
+// import Kerala from '../assets/images/Kerala.jpg'
+// import Manali from '../assets/images/Manali.webp'
+// import Ooty from '../assets/images/ooty.jpeg'
+// import Srinagar from '../assets/images/Srinagar.webp'
+// import Goa from '../assets/images/Goa.avif'
+// import Darjeeling from '../assets/images/darjeeling.jpeg'
 
 const Packages_Slider = () => {
 
@@ -84,7 +84,7 @@ const Packages_Slider = () => {
                     </div>
                 </div>
 
-                <div className="honeymoon-packages">
+                {/* <div className="honeymoon-packages">
                     <h2 className='head_text'>Honeymoon Packages</h2>
                     <div className="slider-container">
                         <div className="cards-container">
@@ -138,7 +138,7 @@ const Packages_Slider = () => {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
             </div>
         </>
     )

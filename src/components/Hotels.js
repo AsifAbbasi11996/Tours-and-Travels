@@ -2,7 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import Navbar from './Navbar'
 import '../assets/css/Hotels.css'
-import Packages_Slider from './Packages_Slider'
+
 
 const Hotels = () => {
     return (
@@ -32,7 +32,7 @@ const Hotels = () => {
                     <button><NavLink>Search for Your Dates</NavLink></button>
                 </div>
             </div>
-            <Packages_Slider />
+            
         </>
     )
 }
