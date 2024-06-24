@@ -50,3 +50,34 @@
     }
 
 }
+
+@media only screen and (min-width:120px) and (max-width:1023px) {
+    .slider-container{
+        justify-content: space-evenly;
+        padding: 0;
+        gap: 0;
+
+        .cards{
+            margin-bottom: 10px;
+
+            .card {
+                width: 160px !important;
+                
+
+                img{
+                    width: 150px !important;
+                    height: 150px !important;
+                }
+
+                h2{
+                    font-size: 14px !important;
+                }
+
+                p{
+                    font-size: 12px !important;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+}

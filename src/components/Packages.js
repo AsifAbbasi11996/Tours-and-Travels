@@ -69,7 +69,7 @@ const Packages = () => {
 
         <div className="packages-container">
           <Packages_Slider />
-          <Packages_Slider />
+          
         </div>
       </div>
     </div>

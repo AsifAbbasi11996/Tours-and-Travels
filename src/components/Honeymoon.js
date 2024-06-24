@@ -46,7 +46,7 @@ const Honeymoon = () => {
                             return (
                                 <div className="cards">
                                     <div className="card">
-                                        <img src={response.Images[0]} alt="" />
+                                        <img src={response.Images[1]} alt="" />
                                         <h2>{response.State}</h2>
                                     </div>
                                 </div>

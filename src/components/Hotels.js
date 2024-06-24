@@ -33,7 +33,6 @@ const Hotels = () => {
                 </div>
             </div>
             <Packages_Slider />
-            <Packages_Slider />
         </>
     )
 }
