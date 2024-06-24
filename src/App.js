@@ -16,6 +16,7 @@ import Explore from './components/Explore';
 import Honeymoon from './components/Honeymoon';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
+import Booknow from './components/Booknow';
 import Continent from './components/Continent';
 import Country from './components/Country';
 import Spot from './components/Spot';
@@ -27,6 +28,7 @@ import AddPackage from './Admin/AddPackage';
 import AddPlace from './Admin/AddPlace';
 import AddSpot from './Admin/AddSpot';
 import State from './components/State';
+import About from './components/About';
 
 function App() {
   return (
@@ -37,6 +39,7 @@ function App() {
         <Route path='/' element={<HomePage />} />
         <Route path='/packages' element={<Packages />} />
         <Route path='/hotels' element={<Hotels />} />
+        <Route path='/about' element={<About />} />
         <Route path='/home_slider' element={<Home_Slider />} />
         <Route path='/places' element={<Places />} />
         <Route path='/hotels_images' element={<Hotels_images />} />
@@ -53,6 +56,7 @@ function App() {
         <Route path='/state/:state' element={<State />} />
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<SignUp />} />
+        <Route path='/booknow' element={<Booknow />} />
         <Route path='/addcountry' element={<AddCountry />} />
         <Route path='/adminlogin' element={<AdminLogin />} />
         <Route path='/admin' element={<Admin />} />

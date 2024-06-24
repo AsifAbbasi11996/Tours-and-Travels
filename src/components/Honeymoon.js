@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Navbar from './Navbar'
-import { useLocation } from 'react-router-dom'
+import { useLocation, NavLink } from 'react-router-dom'
 import '../assets/css/Honeymoon.css'
 
 
@@ -39,16 +39,18 @@ const Honeymoon = () => {
         <>
             <Navbar />
             <div className="explore-container">
-            <h1>Visit this Honeymoon Packages</h1>
+                <h1>Visit this Honeymoon Packages</h1>
                 <div className="slider-container">
                     {data.map((response, id) => {
                         if (response.Honeymoon) {
                             return (
                                 <div className="cards">
-                                    <div className="card">
-                                        <img src={response.Images[1]} alt="" />
-                                        <h2>{response.State}</h2>
-                                    </div>
+                                    <NavLink to={`/spot/${response.PackageName}`} state={{ spot: response.PackageName }}>
+                                        <div className="card">
+                                            <img src={response.Images[1]} alt="" />
+                                            <h2>{response.State}</h2>
+                                        </div>
+                                    </NavLink>
                                 </div>
                             )
                         }

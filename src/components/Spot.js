@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useLocation } from 'react-router-dom'
+import { useLocation, NavLink } from 'react-router-dom'
 import Navbar from './Navbar'
 import '../assets/css/Spot.css'
 
@@ -59,6 +59,11 @@ const Spot = () => {
                                             <p><strong>Includes :</strong> {response.SPIncludes.join(', ')}</p>
                                             <p className="category"><strong>Category :</strong> {response.Category}</p>
                                             <p><strong>Weather :</strong> {response.Weather}</p>
+                                        </div>
+
+                                        <div className="book-now">
+                                            <NavLink to='/booknow'><button><i class="ri-play-list-add-line"></i>Book Now</button>
+                                            </NavLink>
                                         </div>
                                     </div>
                                     <div className="more-details" >

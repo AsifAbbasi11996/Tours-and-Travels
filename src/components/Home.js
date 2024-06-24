@@ -36,7 +36,8 @@ const Home = () => {
                         <p>Travor is one of the most popular Travel
                             agency for those who want to explore the
                             world and try to make adventure.</p>
-                        <button><NavLink to={`/continent/${selectedContinent}`} state={{ continent: selectedContinent }}>Plan Trip</NavLink></button>
+                        <button><NavLink to='/packages'>Plan Trip</NavLink></button>
+                        {/* <button><NavLink to={`/continent/${selectedContinent}`} state={{ continent: selectedContinent }}>Plan Trip</NavLink></button> */}
                     </div>
                     <div className="right">
                         <div className="img">
