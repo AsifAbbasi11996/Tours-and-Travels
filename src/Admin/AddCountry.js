@@ -15,6 +15,7 @@ const AddCountry = () => {
     const [mustKnown, setMustKnown] = useState('');
     const [data, setData] = useState([]);
     const [count, setCount] = useState(0);
+    const [error, setError] = useState(null);
     const location = useLocation();
     const navigate = useNavigate();
     const condition = location.state || {};
@@ -31,7 +32,7 @@ const AddCountry = () => {
 
     const getData = async () => {
         try {
-            const response = await fetch("https://api-k7vh.onrender.com/travel/country/all", {
+            const response = await fetch("http://localhost:8000/travel/country/all", {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
@@ -48,8 +49,21 @@ const AddCountry = () => {
         }
     };
 
+    useEffect(() => {
+        getData();
+    }, []);
+
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        const sliderImageUrls = sliderImages.map(item => item.url);
+        const isValidFaq = faq.every(item => item.question.trim() !== '' && item.answer.trim() !== '');
+
+        if (!isValidFaq) {
+            console.error('FAQ items must have both question and answer filled.');
+            return;
+        }
+
         const countryData = {
             Name: name,
             Region: region,
@@ -57,26 +71,30 @@ const AddCountry = () => {
             Continent: continent,
             About: about,
             TravelEssential: travelEssential,
-            SliderImages: sliderImages,
+            SliderImages: sliderImageUrls,
             Description: description,
             FAQ: faq,
             MustKnown: mustKnown,
         };
+
         try {
-            const response = await fetch("https://api-k7vh.onrender.com/travel/country/add", {
+            const response = await fetch("http://localhost:8000/travel/country/add", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(countryData),
             });
+
             if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
+                throw new Error(`Failed to add country: ${response.status} - ${response.statusText}`);
             }
+
             const newCountry = await response.json();
             setData([...data, newCountry]);
             setCount(count + 1);
-            // Reset form
+
+            // Reset form fields
             setName('');
             setRegion('');
             setStartingPackage('');
@@ -87,14 +105,15 @@ const AddCountry = () => {
             setDescription('');
             setFaq([{ question: '', answer: '' }]);
             setMustKnown('');
+
+            console.log('Country added successfully:', newCountry);
+            alert('Country added successfully!');
         } catch (error) {
-            console.error('Failed to add country:', error);
+            console.error('Failed to add country:', error.message);
+            setError('Failed to add country. Please try again.');
+            alert('Failed to add country. Please try again.');
         }
     };
-
-    useEffect(() => {
-        getData();
-    }, []);
 
     const handleFaqChange = (index, e) => {
         const updatedFaq = faq.map((item, i) => (i === index ? { ...item, [e.target.name]: e.target.value } : item));
@@ -118,6 +137,7 @@ const AddCountry = () => {
         <section className="addcountry-main">
             <div className="addcountry-container">
                 <h2>Add Country</h2>
+                {error && <p className="error">{error}</p>}
                 <form onSubmit={handleSubmit}>
                     <input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Name" required />
                     <input type="text" value={region} onChange={(e) => setRegion(e.target.value)} placeholder="Region" required />
@@ -140,9 +160,8 @@ const AddCountry = () => {
                     ))}
                     <button type="button" onClick={addFaqField}>Add FAQ</button>
                     <input type="text" value={mustKnown} onChange={(e) => setMustKnown(e.target.value)} placeholder="Must Known" required />
-                    
+                    <button type="submit">Submit</button>
                 </form>
-                <button type="submit">Submit</button>
             </div>
             <div className="addcountry-content">
                 <h2>Total Countries: {count}</h2>
@@ -173,13 +192,13 @@ const AddCountry = () => {
                                 <td>{res.About}</td>
                                 <td>{res.TravelEssential}</td>
                                 <td>{res.SliderImages.map((img, i) => (
-                                    <img key={i} src={img.url} alt={`slider-${i}`} width="50" />
+                                    <img key={i} src={img} alt={`slider-${i}`} width="50" />
                                 ))}</td>
                                 <td>{res.Description}</td>
                                 <td>{res.FAQ.map((faqItem, i) => (
                                     <div key={i}>
-                                        <strong>Q: {faqItem.question}</strong>
-                                        <p>A: {faqItem.answer}</p>
+                                        <strong>Q: {faqItem.Question}</strong>
+                                        <p>A: {faqItem.Answer}</p>
                                     </div>
                                 ))}</td>
                                 <td>{res.MustKnown}</td>
@@ -193,4 +212,3 @@ const AddCountry = () => {
 };
 
 export default AddCountry;
-
