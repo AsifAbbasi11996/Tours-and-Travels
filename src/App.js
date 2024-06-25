@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar'
 import Home from './components/Home'
 import Packages from './components/Packages';
-import Hotels from './components/Hotels';
+// import Hotels from './components/Hotels';
 import Home_Slider from './components/Home_Slider';
 import Places from './components/Places';
 import Hotels_images from './components/Hotels_images';
@@ -38,7 +38,7 @@ function App() {
         <Route path='/home' element={<Home />} />
         <Route path='/' element={<HomePage />} />
         <Route path='/packages' element={<Packages />} />
-        <Route path='/hotels' element={<Hotels />} />
+        {/* <Route path='/hotels' element={<Hotels />} /> */}
         <Route path='/about' element={<About />} />
         <Route path='/home_slider' element={<Home_Slider />} />
         <Route path='/places' element={<Places />} />
