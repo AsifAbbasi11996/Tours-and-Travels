@@ -43,7 +43,7 @@ const SignUp = () => {
         } else {
             setErrorMessage('');
             console.log('Form submitted');
-            // Proceed with form submission logic
+           
         }
     };
 
@@ -62,18 +62,18 @@ const SignUp = () => {
                             <label for="">Create Password</label>
                             <div class="input-box">
                                 <input type={isPasswordVisible ? "text" : "password"} id="password" placeholder="Please enter your password" required="required" value={password} onChange={(e) => setPassword(e.target.value)} />
-                                <i class="ri-eye-fill" id="show" style={{ display: isPasswordVisible ? "none" : "block" }}
+                                <i class="ri-eye-fill" id="show" style={{ display: isPasswordVisible ? "block" : "none" }}
                                     onClick={togglePasswordVisibility}></i>
-                                <i class="ri-eye-off-fill" id="hide" style={{ display: isPasswordVisible ? "block" : "none" }}
+                                <i class="ri-eye-off-fill" id="hide" style={{ display: isPasswordVisible ? "none" : "block" }}
                                     onClick={togglePasswordVisibility}></i>
                             </div>
                             <label for="">Confirm Password</label>
                             <div class="input-box">
                                 <input type={isPasswordVisible1 ? "text" : "password"} id="password" placeholder="Please enter your password" required="required" value={confirmPassword}
                                     onChange={(e) => setConfirmPassword(e.target.value)} />
-                                <i class="ri-eye-fill" id="show" style={{ display: isPasswordVisible1 ? "none" : "block" }}
+                                <i class="ri-eye-fill" id="show" style={{ display: isPasswordVisible1 ? "block" : "none" }}
                                     onClick={togglePasswordVisibility1}></i>
-                                <i class="ri-eye-off-fill" id="hide" style={{ display: isPasswordVisible1 ? "block" : "none" }}
+                                <i class="ri-eye-off-fill" id="hide" style={{ display: isPasswordVisible1 ? "none" : "block" }}
                                     onClick={togglePasswordVisibility1}></i>
                             </div>
                             {errorMessage && <p className="error-message">{errorMessage}</p>}

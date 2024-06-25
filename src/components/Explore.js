@@ -38,13 +38,13 @@ const Explore = () => {
         <>
             <Navbar />
             <div className="explore-container">
-                <h1>Visit this {explore}</h1>
+                <h1>Visit this {explore} places</h1>
                 <div className="slider-container">
                     {data.map((response, id) => {
                         if (response.Category === explore) {
                             return (
                                 <div className="cards">
-                                    <NavLink to={`/spot/${response.PackageName}`} state={{ spot: response.PackageName}}>
+                                    <NavLink to={`/spot/${response.PackageName}`} state={{ spot: response.PackageName }}>
                                         <div className="card">
                                             <img src={response.Images[1]} alt="" />
                                             <h2>{response.State}</h2>

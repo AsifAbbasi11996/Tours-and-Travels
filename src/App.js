@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar'
 import Home from './components/Home'
 import Packages from './components/Packages';
-import Hotels from './components/Hotels';
+// import Hotels from './components/Hotels';
 import Home_Slider from './components/Home_Slider';
 import Places from './components/Places';
 import Hotels_images from './components/Hotels_images';
@@ -16,6 +16,7 @@ import Explore from './components/Explore';
 import Honeymoon from './components/Honeymoon';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
+import Booknow from './components/Booknow';
 import Continent from './components/Continent';
 import Country from './components/Country';
 import Spot from './components/Spot';
@@ -26,6 +27,8 @@ import Admin from './Admin/Admin';
 import AddPackage from './Admin/AddPackage';
 import AddPlace from './Admin/AddPlace';
 import AddSpot from './Admin/AddSpot';
+import State from './components/State';
+import About from './components/About';
 
 function App() {
   return (
@@ -35,7 +38,8 @@ function App() {
         <Route path='/home' element={<Home />} />
         <Route path='/' element={<HomePage />} />
         <Route path='/packages' element={<Packages />} />
-        <Route path='/hotels' element={<Hotels />} />
+        {/* <Route path='/hotels' element={<Hotels />} /> */}
+        <Route path='/about' element={<About />} />
         <Route path='/home_slider' element={<Home_Slider />} />
         <Route path='/places' element={<Places />} />
         <Route path='/hotels_images' element={<Hotels_images />} />
@@ -49,8 +53,10 @@ function App() {
         <Route path='/continent/:continent' element={<Continent />} />
         <Route path='/country/:country' element={<Country />} />
         <Route path='/spot/:spot' element={<Spot />} />
+        <Route path='/state/:state' element={<State />} />
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<SignUp />} />
+        <Route path='/booknow' element={<Booknow />} />
         <Route path='/addcountry' element={<AddCountry />} />
         <Route path='/adminlogin' element={<AdminLogin />} />
         <Route path='/admin' element={<Admin />} />

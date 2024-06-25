@@ -21,7 +21,7 @@
                 justify-content: center;
                 gap: 60px;
                 margin-bottom: 20px;
-                
+
                 img {
                     width: 325px;
                     height: 250px;
@@ -31,8 +31,8 @@
                     object-position: 25% 75%;
                     transition: transform 0.2s;
                 }
-                
-                img:hover{
+
+                img:hover {
                     transform: scale(1.05);
 
                 }
@@ -44,7 +44,7 @@
                     max-width: 320px;
                 }
 
-                .country{
+                .country {
                     color: black;
                 }
 
@@ -65,12 +65,30 @@
                         font-style: italic;
                     }
                 }
+
+                .book-now {
+                    margin-top: 100px;
+
+                    button {
+                        padding: 10px 15px;
+                        font-size: 16px;
+                        color: white;
+                        background-color: rgb(255, 106, 0);
+                        border: none;
+                        border-radius: 10px;
+                        cursor: pointer;
+
+                        i{
+                            margin-right: 10px;
+                        }
+                    }
+                }
             }
 
             .more-details {
                 padding: 10px;
                 line-height: 2;
-                
+
 
                 .flow-short {
                     display: flex;
@@ -81,14 +99,14 @@
                         ul {
                             margin-left: 30px;
 
-                            li{
-                                p{
+                            li {
+                                p {
                                     font-size: 18px;
                                 }
                             }
                         }
 
-                        .short-itinerary{
+                        .short-itinerary {
                             margin-left: 30px;
                             font-size: 18px;
                         }
@@ -123,7 +141,7 @@
                         list-style-type: disc;
                         margin-left: 20px;
                     }
-                } 
+                }
 
                 .questions {
                     margin-top: 20px;
@@ -150,16 +168,16 @@
             font-size: 16px;
         }
 
-        .slider-container{
+        .slider-container {
 
-            .cards-container{
+            .cards-container {
 
-                .card{
+                .card {
                     flex-direction: column;
                     gap: 10px;
                     align-items: center;
 
-                    img{
+                    img {
                         transition: none;
                     }
 
@@ -167,38 +185,46 @@
                         transform: none;
                     }
 
-                    h2{
+                    h2 {
                         font-size: 16px;
                     }
 
-                    .details{
+                    .details {
                         padding: 0px 16px;
+                    }
+
+                    .book-now {
+                        margin-top: 10px;
+    
+                        button{
+                            font-size: 14px;
+                        }
                     }
                 }
 
-                .more-details{
+                .more-details {
                     padding: 5px 20px;
 
-                    .flow-short{
+                    .flow-short {
                         flex-direction: column;
-    
-                        .flex{
-                           
-                            p{
+
+                        .flex {
+
+                            p {
                                 font-size: 16px;
                             }
-    
+
                             ul {
-                                
-                                li{
-                                    
-                                    p{
+
+                                li {
+
+                                    p {
                                         font-size: 15px !important;
                                     }
                                 }
                             }
-    
-                            .short-itinerary{
+
+                            .short-itinerary {
                                 font-size: 15px !important;
                                 margin-left: 20px !important;
                             }
@@ -209,19 +235,19 @@
                         font-size: 16px;
                     }
 
-                    .margin{
+                    .margin {
                         margin-left: 0px;
                     }
 
-                    .itinerary-day{
+                    .itinerary-day {
                         margin-left: 20px;
 
-                        h3{
+                        h3 {
                             font-size: 14px;
                         }
 
-                        ul{
-                            li{
+                        ul {
+                            li {
                                 font-size: 15px;
                                 line-height: 1.5;
                                 margin-bottom: 10px;
@@ -230,9 +256,9 @@
                     }
 
                     .questions {
-    
+
                         .faq {
-                        
+
                             p {
                                 font-size: 15px;
                                 margin-left: 0;

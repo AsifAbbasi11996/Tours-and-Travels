@@ -101,23 +101,20 @@
 
         .btn {
 
-            
-                button {
-                    padding: 15px 20px;
-                    background-color: rgb(255, 106, 0);
-                    border-radius: 6px;
-                    border: none;
-                    cursor: pointer;
+            button {
+                padding: 15px 20px;
+                background-color: rgb(255, 106, 0);
+                border-radius: 6px;
+                border: none;
+                cursor: pointer;
 
-                    a {
-                        font-size: 18px;
-                        font-weight: 500;
-                        color: white;
-                        text-decoration: none;
-                    }
+                a {
+                    font-size: 18px;
+                    font-weight: 500;
+                    color: white;
+                    text-decoration: none;
                 }
-
-
+            }
         }
     }
 
@@ -253,8 +250,8 @@
             .country1 {
 
                 .img {
-                    width: 200px;
-                    height: 350px;
+                    width: 210px;
+                    height: 380px;
                     background-image: url('../images/dubai.jpg');
                     background-size: cover;
                     border-radius: 20px;
@@ -310,8 +307,8 @@
 
             .country2 {
                 .img {
-                    width: 200px;
-                    height: 350px;
+                    width: 210px;
+                    height: 380px;
                     background-image: url('../images/bali.webp');
                     background-size: cover;
                     background-position: center;

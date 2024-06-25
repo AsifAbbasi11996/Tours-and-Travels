@@ -2,20 +2,20 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../assets/css/Packages.css';
 import Navbar from './Navbar';
-import Packages_Slider from './Packages_Slider';
+import State from './State';
 
 const Packages = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [data, setData] = useState([]);
+  const [showSuggestions, setShowSuggestions] = useState(false); 
+
   const navigate = useNavigate();
 
   const getData = async () => {
     try {
       const response = await fetch('https://api-k7vh.onrender.com/travel/package/all', {
         method: 'GET',
-        headers: {
-          'Content-type': 'application/json',
-        },
+        headers: { 'Content-type': 'application/json' },
       });
       const responsedata = await response.json();
       setData(responsedata);
@@ -29,7 +29,8 @@ const Packages = () => {
   }, []);
 
   const handleSearch = (e) => {
-    setSearchTerm(e.target.value);
+    setSearchTerm(e.target.value.toLowerCase()); 
+    setShowSuggestions(e.target.value.length > 0); 
   };
 
   const handleSearchSubmit = () => {
@@ -47,6 +48,18 @@ const Packages = () => {
     }
   };
 
+  const handleSuggestionClick = (suggestion) => {
+    setSearchTerm(suggestion);
+    setShowSuggestions(false); 
+  };
+
+  const filteredSuggestions = data.filter(item =>
+    item.Country?.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  const uniqueSet = new Set(filteredSuggestions.map(item => item.Country));
+  const uniqueSuggestions = Array.from(uniqueSet); 
+
   return (
     <div>
       <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
@@ -59,17 +72,24 @@ const Packages = () => {
             <i className="ri-search-line" onClick={handleSearchSubmit}></i>
             <input
               type="search"
-              placeholder="Search ' Packages in Manali ' "
+              placeholder="Search ' Country ' "
               value={searchTerm}
               onChange={handleSearch}
               onKeyDown={handleKeyDown}
             />
+            {showSuggestions && uniqueSuggestions.length > 0 && ( 
+              <ul className="suggestions">
+                {uniqueSuggestions.map((suggestion, index) => (
+                  <li key={index}>
+                    <button onClick={() => handleSuggestionClick(suggestion)}>{suggestion}</button>
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
         </div>
-
         <div className="packages-container">
-          <Packages_Slider />
-          <Packages_Slider />
+          <State searchedCountry={searchTerm} />
         </div>
       </div>
     </div>

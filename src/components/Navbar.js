@@ -34,11 +34,11 @@ const Navbar = () => {
                 <NavLink to='/packages' className="nav-link" activeClassName="active">Packages</NavLink>
               </li>
               <li>
-                <NavLink to='/hotels' className="nav-link" activeClassName="active">Hotels</NavLink>
+                <NavLink to='https://www.booking.com/' className="nav-link" activeClassName="active">Hotels</NavLink>
               </li>
-              <li>
+              {/* <li>
                 <NavLink to='/places' className="nav-link" activeClassName="active">Places</NavLink>
-              </li>
+              </li> */}
               <li>
                 <NavLink to='/about' className="nav-link"
                   activeClassName="active">About Us</NavLink>
