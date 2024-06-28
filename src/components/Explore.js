@@ -11,7 +11,7 @@ const Explore = () => {
     const [data, setData] = useState([])
 
     const getData = async () => {
-        const response = await fetch('https://api-k7vh.onrender.com/travel/package/all', {
+        const response = await fetch('https://api-5e1h.onrender.com/travel/package/all', {
             method: 'GET',
             header: {
                 "Content-type": "application/json"

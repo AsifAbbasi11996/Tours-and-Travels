@@ -13,7 +13,7 @@ const Continent = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const continentResponse = await fetch('https://api-k7vh.onrender.com/travel/continent');
+                const continentResponse = await fetch('https://api-5e1h.onrender.com/travel/continent');
                 const continentData = await continentResponse.json();
                 setContinentData(continentData);
             } catch (error) {
@@ -21,7 +21,7 @@ const Continent = () => {
             }
 
             try {
-                const countryResponse = await fetch('https://api-k7vh.onrender.com/travel/country/all');
+                const countryResponse = await fetch('https://api-5e1h.onrender.com/travel/country/all');
                 const countryData = await countryResponse.json();
                 setCountryData(countryData);
             } catch (error) {

@@ -32,7 +32,7 @@ const AddCountry = () => {
 
     const getData = async () => {
         try {
-            const response = await fetch("http://localhost:8000/travel/country/all", {
+            const response = await fetch("https://api-5e1h.onrender.com/travel/country/all", {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
@@ -78,7 +78,7 @@ const AddCountry = () => {
         };
 
         try {
-            const response = await fetch("http://localhost:8000/travel/country/add", {
+            const response = await fetch("https://api-5e1h.onrender.com/travel/country/add", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
