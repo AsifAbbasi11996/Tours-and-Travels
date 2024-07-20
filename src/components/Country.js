@@ -11,7 +11,7 @@ const Country = () => {
     const [data, setData] = useState([])
 
     const getData = async () => {
-        const response = await fetch('https://api-k7vh.onrender.com/travel/package/all', {
+        const response = await fetch('https://api-5e1h.onrender.com/travel/package/all', {
             method: 'GET',
             header: {
                 "Content-type": "application/json"
@@ -46,7 +46,7 @@ const Country = () => {
                                 <div className="cards-container">
                                     <Link to={`/spot/${response.PackageName}`} state={{ spot: response.PackageName}}>
                                         <div className="card">
-                                            <img src={response.Images[1]} className="slider-image" />
+                                            <img src={response.Images[0]} className="slider-image" />
                                             <h2>{response.State}</h2>
                                             <p><span>Package Name</span> : {response.PackageName}</p>
                                             <p><span>Spot</span> : {response.Spot}</p>

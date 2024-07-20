@@ -6,7 +6,7 @@ const Home_api = () => {
     const [data, setData] = useState([])
 
     const getData = async () => {
-        const response = await fetch('https://api-k7vh.onrender.com/travel/country/all', {
+        const response = await fetch('https://api-5e1h.onrender.com/travel/country/all', {
             method: 'GET',
             header: {
                 "Content-type": "application/json"

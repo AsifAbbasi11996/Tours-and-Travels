@@ -40,7 +40,7 @@ const AddPackage = () => {
     }, [condition]);
     const getData = async () => {
         try {
-            const response = await fetch("https://api-k7vh.onrender.com/travel/package/all", {
+            const response = await fetch("https://api-5e1h.onrender.com/travel/package/all", {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
@@ -81,7 +81,7 @@ const AddPackage = () => {
             Weather: weather,
         };
         try {
-            const response = await fetch("https://api-k7vh.onrender.com/travel/package/add", {
+            const response = await fetch("https://api-5e1h.onrender.com/travel/package/add", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

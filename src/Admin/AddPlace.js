@@ -29,7 +29,7 @@ const AddPlace = () => {
     }, [condition]);
     const getData = async () => {
         try {
-            const response = await fetch("https://api-k7vh.onrender.com/travel/place/all", {
+            const response = await fetch("https://api-5e1h.onrender.com/travel/place/all", {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
@@ -60,7 +60,7 @@ const AddPlace = () => {
             MustKnown: mustKnown,
         };
         try {
-            const response = await fetch("https://api-k7vh.onrender.com/travel/place/add", {
+            const response = await fetch("https://api-5e1h.onrender.com/travel/place/add", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
